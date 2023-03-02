@@ -1,7 +1,21 @@
+var continueShoppingBtn = document.querySelector('.continue_shopping_btn');
+
+if (continueShoppingBtn) {
+continueShoppingBtn.textContent = 'Continue Shopping...';
+}
+
+var cartHeading = document.querySelector('.cartTitle h1.reviewHeading')
+
+if (cartHeading){
+cartHeading.textContent = 'My Bag'
+}
+
+var storeSelector = document.querySelector('span#cphContent_StoreSelector1_CtaMessage')
+
+storeSelector.style.display = 'none';
+
 $(document).ready(function() {
   StoreFront.cartReady(function() {
-    var storeSelector = document.querySelector('span#cphContent_StoreSelector1_CtaMessage')
-
     if (storeSelector) {
 
       if (storeSelector.innerText.startsWith('Your current')) {
@@ -24,3 +38,5 @@ $(document).ready(function() {
     }
   })
 })
+
+setTimeout(function() { storeSelector.style.display = 'block'; }, 100)
